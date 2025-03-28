@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #ff66b2;
+        }
+        textarea {
+            width: 90%;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #ff66b2;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+        button {
+            background: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #d14791;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>💖 Sentiment Analysis 💖</h2>
+        <form method="POST">
+            <textarea name="text" placeholder="Enter your review here..."></textarea>
+            <br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if sentiment %}
+        <div class="result">
+            <p>📝 Review Sentiment: <b>{{ sentiment }}</b></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
