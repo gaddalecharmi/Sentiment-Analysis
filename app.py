@@ -1,3 +1,9 @@
+import os
+import nltk
+
+# Add the custom nltk_data directory from the project folder
+nltk.data.path.append(os.path.join(os.getcwd(), 'nltk_data'))
+
 from flask import Flask, render_template, request
 from nltk.sentiment import SentimentIntensityAnalyzer
 
